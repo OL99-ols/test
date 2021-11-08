@@ -1,0 +1,85 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="s4d_login" id="iiAWI$zimcEEFH$6-[Db" x="170" y="-149">
+    <value name="TOKEN">
+      <block type="text" id="9KFP28cyM}i};`51oNS,">
+        <field name="TEXT">ODYyOTY3MzgyMjE3MzI2NTky.YOgDAQ.NAbaDK5-vxDM31zQrEGKneDSqVY</field>
+      </block>
+    </value>
+  </block>
+  <block type="s4d_on_message" id="69qOm$^B1PXAh{Qu5trJ" x="160" y="76">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="yDE_hL32HeRk=r1Jw[C9">
+        <value name="IF0">
+          <block type="s4d_starts_with" id="bRm2Y%)9WDAD.08qsL(H">
+            <value name="STRING">
+              <shadow type="text" id=".~I3YQRfDrNrK24ywiTd">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="s4d_message_content" id="6SDrMl^nU=5D[$A[jzFy"></block>
+            </value>
+            <value name="SUBSTRING">
+              <shadow type="text" id="WP.nn1FzGy`=tMkd#8HC">
+                <field name="TEXT">webhook</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_create_webhook_then" id="mp*8vnB}DNr,?q9zbl@`">
+            <value name="channel">
+              <block type="s4d_message_channel" id="*D[B#P)8#Z92c@_2n864"></block>
+            </value>
+            <statement name="STATEMENTS">
+              <block type="s4d_edit_webhook" id="mu1I5R$(.8rm{i)a7Mgj">
+                <value name="NAME">
+                  <block type="s4d_message_author_raw" id="Jz+5CPS(:rUr73l.UOEc">
+                    <field name="SEARCH_TYPE">USERNAME</field>
+                  </block>
+                </value>
+                <value name="AVATAR">
+                  <block type="s4d_member_icon" id="=*j~$}*{KCP?_wC8zTNX">
+                    <value name="MEMBER">
+                      <block type="s4d_message_author" id="3IyG).x0$#OaS7BO#u-H"></block>
+                    </value>
+                  </block>
+                </value>
+                <value name="CHANNEL">
+                  <block type="s4d_message_channel" id="Hx+5cG[@p3b*1Wtj/G)G"></block>
+                </value>
+                <next>
+                  <block type="s4d_get_webhook_then" id="_~UiofjPN1W6)z3~OrF`">
+                    <value name="ID">
+                      <block type="s4d_webhook_id" id="(-kq`i~y)V??c^0@B_jk"></block>
+                    </value>
+                    <value name="TOKEN">
+                      <block type="s4d_webhook_token" id="U-.l?hUK#y;A=RUC*/Q{"></block>
+                    </value>
+                    <statement name="STATEMENTS">
+                      <block type="s4d_send_webhook" id="bkKJL=^dX%ToxLp:qV._">
+                        <value name="CONTENT">
+                          <block type="text_getSubstring" id="`$70Z!J~v@@4}lG(KwKD">
+                            <mutation at1="true" at2="false"></mutation>
+                            <field name="WHERE1">FROM_START</field>
+                            <field name="WHERE2">LAST</field>
+                            <value name="STRING">
+                              <block type="s4d_message_content" id="I~d^_0Ie3JqUU,R~vfKr"></block>
+                            </value>
+                            <value name="AT1">
+                              <block type="math_number" id="|(WpmEdsJjYCD3=]tp52">
+                                <field name="NUM">9</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
